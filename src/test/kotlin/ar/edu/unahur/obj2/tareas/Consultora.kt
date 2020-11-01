@@ -1,6 +1,8 @@
 package ar.edu.unahur.obj2.tareas
 
 import io.kotest.core.spec.style.DescribeSpec
+import io.kotest.matchers.collections.shouldContain
+import io.kotest.matchers.shouldBe
 
 class Consultora : DescribeSpec({
   describe("Consultora") {
@@ -17,7 +19,7 @@ class Consultora : DescribeSpec({
     val tareaInt = TareaIntegracion(listOf(tarea1,tarea2),Ignacio)
 
     it("Nomina de empleados de una tarea comun"){
-
+      consultora.nominaEmpleados(tarea1).shouldBe(listOf(Juan,Manuel,Eva))
     }
   }
 })
